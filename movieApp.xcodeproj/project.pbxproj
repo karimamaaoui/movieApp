@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E9B9423A2BDBFB6000F67A49 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B942392BDBFB6000F67A49 /* Movie.swift */; };
+		E9C318342BDCEA7F003AB4CD /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C318332BDCEA7F003AB4CD /* SplashScreenView.swift */; };
 		E9D5056D2BDBA0C5009F6172 /* movieAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D5056C2BDBA0C5009F6172 /* movieAppApp.swift */; };
 		E9D5056F2BDBA0C5009F6172 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D5056E2BDBA0C5009F6172 /* ContentView.swift */; };
 		E9D505712BDBA0C6009F6172 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9D505702BDBA0C6009F6172 /* Assets.xcassets */; };
@@ -24,6 +25,7 @@
 
 /* Begin PBXFileReference section */
 		E9B942392BDBFB6000F67A49 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		E9C318332BDCEA7F003AB4CD /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		E9D505692BDBA0C5009F6172 /* movieApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = movieApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9D5056C2BDBA0C5009F6172 /* movieAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = movieAppApp.swift; sourceTree = "<group>"; };
 		E9D5056E2BDBA0C5009F6172 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 				E9D505702BDBA0C6009F6172 /* Assets.xcassets */,
 				E9D505722BDBA0C6009F6172 /* Preview Content */,
 				E9B942392BDBFB6000F67A49 /* Movie.swift */,
+				E9C318332BDCEA7F003AB4CD /* SplashScreenView.swift */,
 			);
 			path = movieApp;
 			sourceTree = "<group>";
@@ -180,6 +183,7 @@
 			files = (
 				E9D5058B2BDBA595009F6172 /* HomeView.swift in Sources */,
 				E9D5056F2BDBA0C5009F6172 /* ContentView.swift in Sources */,
+				E9C318342BDCEA7F003AB4CD /* SplashScreenView.swift in Sources */,
 				E9B9423A2BDBFB6000F67A49 /* Movie.swift in Sources */,
 				E9D5056D2BDBA0C5009F6172 /* movieAppApp.swift in Sources */,
 			);
