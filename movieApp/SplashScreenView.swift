@@ -17,10 +17,10 @@ struct SplashScreenView: View {
                             .frame(width: 370, height: 300)
                             .padding(.top,24)
                         Spacer()
-                        Text("Discover You Dream Job Here")
+                        Text("Discover Lorem Ipsum")
                             .font(.system(size: 35 , weight:.bold))
                             .multilineTextAlignment(.center).foregroundColor(Color("primaryBlue")).padding(.bottom, 8)
-                        Text("Explore all the existing jbo roles based on your interst and study major").font(.system(size: 14 , weight:.regular)).multilineTextAlignment(.center).foregroundColor(.black)
+                        Text("Lorem Ipsum is simply dummy text of the printing and typesetting industry.").font(.system(size: 14 , weight:.regular)).multilineTextAlignment(.center).foregroundColor(.black)
                             
                         Spacer()
                         HStack (spacing: 12){
@@ -35,13 +35,12 @@ struct SplashScreenView: View {
                         }
                         
                         Spacer()
-                     
                         
                         }
                     .padding()
                     .navigationBarHidden(true)
                     
-                        
+                
                                 
                 }
             }
