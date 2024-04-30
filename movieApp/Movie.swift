@@ -7,7 +7,7 @@
 
 // Movie.swift
 import Foundation
-
+/*
 struct Movie: Hashable, Codable {
     let originalLanguage: String
     let originalTitle: String
@@ -71,3 +71,14 @@ class MovieModel: ObservableObject {
 struct Response: Codable {
     let results: [Movie]
 }
+*/
+
+struct Movie: Codable ,Identifiable{
+    let id: Int
+    let title: String
+    let posterPath: String?
+    let overview: String
+    let releaseDate: String
+}
+
+

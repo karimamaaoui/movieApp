@@ -7,8 +7,11 @@
 // HomeView.swift
 import SwiftUI
 
-struct URLImage: View {
-    @State var data: Data?
+
+//struct URLImage: View {
+  
+    
+    /*@State var data: Data?
     let urlString: String
     
     var body: some View {
@@ -50,38 +53,42 @@ struct URLImage: View {
         }
         task.resume()
     }
-}
+}*/
 
-struct HomeView: View {
-    @ObservedObject var movieModel = MovieModel()
-    
-    var body: some View {
-        NavigationView {
-            List {
-                ForEach(movieModel.movies, id: \.self) { movie in
-                    HStack {
-                        URLImage(urlString: movie.backdropPath)
-                        Text(movie.originalTitle).bold()
-                    }
-                    .padding(3)
+
+    struct HomeView: View {
+        @ObservedObject var viewModel: MovieListViewModel
+        
+        // var body: some View {
+        //    NavigationView {
+        /*   List {
+         ForEach(movieModel.movies, id: \.self) { movie in
+         HStack {
+         URLImage(urlString: movie.backdropPath)
+         Text(movie.originalTitle).bold()
+         }
+         .padding(3)
+         }
+         }
+         .navigationBarTitle("Movies")
+         .onAppear {
+         self.movieModel.fetch()
+         }*/
+        //}
+        // }
+     
+        var body: some View {
+            MovieListView(viewModel: viewModel)
+                .onAppear {
+                    viewModel.fetchMovies()
                 }
-            }
-            .navigationBarTitle("Movies")
-            .onAppear {
-                self.movieModel.fetch()
-            }
         }
+    
     }
-}
+            
 
-#if DEBUG
-struct HomeView_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeView()
-    }
-}
-#endif
 
-#Preview {
-    HomeView()
-}
+
+/*#Preview {
+   // HomeView(viewModel: <#MovieListViewModel#>)
+}*/
