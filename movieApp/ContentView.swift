@@ -25,56 +25,6 @@ struct ContentView: View {
         NavigationStack() {
             ScrollView  {
                 
-               /* Picker(selection: $selectedIdx, label: Text("I'm a Picker in a Form")) {
-                    ForEach(0 ..< options.count) {
-                        Text(self.options[$0])
-                    }
-                }.pickerStyle(SegmentedPickerStyle())
-                */
-              /*  if selectedIdx != 0 {
-                    Image("work-from-home")
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: 100, height: 100)
-                        .cornerRadius(40)
-                }
-                */
-              //  Spacer()
-               /* VStack(spacing :16) {
-                    TextField("Email", text: $emailTextField)
-                        .padding()
-                        .background(Color("blueSecond"))
-                        .cornerRadius(12)
-                        .background(
-                            RoundedRectangle(cornerRadius: 12))
-                    
-                    
-                    SecureField("Password", text: $passwordTextField)
-                        .padding()
-                        .background(Color("blueSecond"))
-                        .cornerRadius(12)
-                        .background(
-                            RoundedRectangle(cornerRadius: 12))
-                }.padding()
-                */
-                /*    Button {
-                        selectedIdx == 0 ? login() : register()
-
-                    }
-                    
-                label: {
-                    
-                    Text(selectedIdx == 0 ? "Login":"Create Account").foregroundColor(.white).font(.system(size: 20 , weight: .semibold))
-                }
-                
-                .foregroundColor(.white)
-                .font(.system(size: 20 , weight: .semibold))
-                .padding()
-                .frame(maxWidth: .infinity)
-                .background(Color("primaryBlue"))
-                .cornerRadius(12)
-                .padding(.horizontal)
-                */
                 
                 VStack {
                     Spacer()
