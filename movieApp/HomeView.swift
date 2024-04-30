@@ -80,7 +80,7 @@ import SwiftUI
         var body: some View {
             MovieListView(viewModel: viewModel)
                 .onAppear {
-                    viewModel.fetchMovies()
+                    //viewModel.fetchMovies()
                 }
         }
     
