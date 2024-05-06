@@ -5,53 +5,69 @@
 //  Created by Tekup-mac-3 on 30/4/2024.
 //
 
-import Foundation
+import SwiftUI
 
-struct Response: Codable {
-    let results: [Movie]
-}
-
-class MovieListViewModel: ObservableObject {
-    @Published var movies: [Movie] = []
+struct MovieListView: View {
+    @ObservedObject var viewModel: MovieListViewModel
     
-    func fetchMovies() {
+    var body: some View {
+           
+        NavigationView {
+                   List(viewModel.movies) { movie in
+                       
+                       MovieCardView(movie: movie)
+                   }
+                   .onAppear {
+                       viewModel.fetchMovies()
+                   }
+                   .navigationTitle("Movies")
+               }
+           }
+       }
+
+
+struct MovieCardView: View {
+    let movie: Movie
+    
+    var body: some View {
         
-        guard let url = URL(string: "https://api.themoviedb.org/3/movie/popular?api_key=44168f84ee3d112a8f53f7ff56dde896") else {
-            return
+        HStack(alignment: .top) {
+            if let posterPath = movie.posterPath {
+                // Load movie poster image
+                AsyncImage(url: URL(string: "https://image.tmdb.org/t/p/w500\(posterPath)")) { image in
+                    image
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 100, height: 150)
+                        .cornerRadius(8)
+                } placeholder: {
+                    ProgressView()
+                        .frame(width: 100, height: 150)
+                }
+                .padding(.trailing, 10)
+            } else {
+                Image(systemName: "photo")
+                    .resizable()
+                    .frame(width: 100, height: 150)
+                    .cornerRadius(8)
+                    .padding(.trailing, 10)
+            }
+            
+            VStack(alignment: .leading, spacing: 4) {
+                Text(movie.title)
+                    .font(.headline)
+                // Add Details button
+                                   NavigationLink(destination: DetailsMovieView(movie: movie)) {
+                                       Text("Details")
+                                           .font(.caption)
+                                           .foregroundColor(.blue)
+                                   }
+            }
         }
-        
-        URLSession.shared.dataTask(with: url) { data, _, error in
-            if let error = error {
-                print(error.localizedDescription)
-                return
-            }
-            
-            guard let data = data else {
-                return
-            }
-            
-            do {
-                
-                // Decode the JSON response
-                let decoder = JSONDecoder()
-                decoder.keyDecodingStrategy = .convertFromSnakeCase
-                
-                // Decode the dictionary response into a Response object
-                let response = try decoder.decode(Response.self, from: data)
-            
-                
-                // Extract the movies array from the response and assign it to the movies property
-                DispatchQueue.main.async {
-                    self.movies = response.results
-                }
-                
-                DispatchQueue.main.async {
-                    self.movies = response.results
-                }
-            } catch {
-                print(error.localizedDescription)
-            }
-        }.resume()
+        .padding(.vertical, 8)
     }
 }
 
+#Preview {
+    MovieListView(viewModel: MovieListViewModel())
+}
