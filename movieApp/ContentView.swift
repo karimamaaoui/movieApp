@@ -4,14 +4,14 @@
 //
 //  Created by Tekup-mac-3 on 26/4/2024.
 //
-
 import SwiftUI
 import Firebase
 import FirebaseAuth
 
 
 struct ContentView: View {
-    
+    @ObservedObject var viewModel = MovieListViewModel()
+
     @State private var selectedIdx = 0
     @State private var options = ["Login", "Create Account"]
     @State private var emailTextField = ""
@@ -22,7 +22,9 @@ struct ContentView: View {
 
     }
     var body: some View {
+        
         NavigationStack() {
+            
             ScrollView  {
                 
                 
@@ -31,12 +33,12 @@ struct ContentView: View {
                     VStack (spacing : 12){
                         Text("Login here")
                                      .font(.system(size: 30, weight: .bold))
-                                     .foregroundColor(Color("primaryBlue"))
+                                     .foregroundColor(.red)
                                      .padding(.bottom)
                                  
                                  Text("Welcome back you've been missed!")
                                      .font(.system(size: 16, weight: .bold))
-                                     .foregroundColor(.black)
+                                     .foregroundColor(.white)
                                      .multilineTextAlignment(.center).padding(.bottom , 80)
                                  
                                  TextField("Email", text: $emailTextField)
@@ -76,23 +78,22 @@ struct ContentView: View {
                 .font(.system(size: 20 , weight: .semibold))
                 .padding()
                 .frame(maxWidth: .infinity)
-                .background(Color("primaryBlue"))
+                .background(.red)
                 .cornerRadius(12)
                 .padding(.horizontal)
-                
-                
-                
+              
                 HStack {
                    
-                   /* NavigationLink(destination: HomeView(viewModel: <#MovieListViewModel#>)){
-                    
-                         Text(selectedIdx == 0 ? "Register": "Login").font(.system(size: 20, weight: .semibold)).foregroundColor(Color("primaryBlue"))
-                    }*/
+                    NavigationLink(destination: HomeView(viewModel: viewModel)){
+                       
+                        Text("Register").font(.system(size: 20, weight: .semibold)).foregroundColor(.red)
+                    }
                     
                 }
+                
                 BottomView(googleAction: {}, facebookAction: {}, appleAction: {})
 
-            }.background(Color.init(UIColor(white: 0, alpha: 0.05)))
+            } .background(Color.black)
                 
         }
     }
