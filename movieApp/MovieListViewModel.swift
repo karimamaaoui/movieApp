@@ -54,3 +54,4 @@ class MovieListViewModel: ObservableObject {
         }.resume()
     }
 }
+
