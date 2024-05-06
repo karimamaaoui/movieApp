@@ -5,6 +5,7 @@
 //  Created by Tekup-mac-3 on 30/4/2024.
 //
 
+
 import SwiftUI
 import Firebase
 import FirebaseAuth
@@ -135,7 +136,7 @@ struct BottomView: View {
         VStack{
             Text("Or continue with")
                 .font(.system(size: 14 , weight: .semibold))
-                .foregroundColor(Color("primaryBlue"))
+                .foregroundColor(.white)
                 .padding(.bottom)
            HStack {
                Button(action: googleAction) {
